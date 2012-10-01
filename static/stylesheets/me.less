@@ -1,6 +1,6 @@
 @import 'general.less';
 
-section#me { width: 320px;
+section#me { width: 320px; position: relative; overflow: hidden;
   .profile { height: 100px; background: @milk; width: 100%; border-top: 1px solid @gray4; border-bottom: 1px solid @gray4;
     .avatar { width: 40%; float: left; margin-top: 12px;
       .image { width: 77px; height: 77px; background: white; border-radius: 38px; border: 1px solid @gray4; margin: auto;
@@ -18,8 +18,21 @@ section#me { width: 320px;
     }
   }
 
-  .stats { height: 190px; border-bottom: 1px solid @gray4;
-    .toggle { width: 3px; background: @blue; float: left; height: 100%;}
+  .monster { background: #ebecec; width: 216px; height: 190px; position: relative;
+    .pipe-wrapper { width: 45%; height: 100%;
+      .value { color: @green; position: absolute;}
+      .pointer { position: absolute;}
+      .pipe { position: absolute; top: 10px; left: 60px;
+        img { width: 40px;
+          &.pipe-empty { position: absolute;}
+          &.pipe-mask { position: absolute;}
+        }
+      }
+    }
+  }
+
+  .stats { height: 190px; border-bottom: 1px solid @gray4; width: 320px; position: absolute;
+    .toggle { width: 3px; background: @blue; float: left; height: 100%; cursor: pointer;}
     img { width: 15px; position: absolute; left: 23px; top: 36px;}
     .value { position: absolute; color: @blue-light; font-size: 16px; top: 24px; left: 40px;}
     .circle { border: 3.5px solid @blue-light; width: 50px; height: 50px; position: absolute; border-radius: 38px; left: 12px; top: 12px;}
@@ -31,7 +44,7 @@ section#me { width: 320px;
     }
     .shopping { margin-left: 60px; margin-top: 5px;}
     .outing {  margin-top: 5px;
-      img { width: 28px; top: 46px; left: 21px;}
+      img { width: 26px; top: 41px; left: 19px;}
     }
   }
 }

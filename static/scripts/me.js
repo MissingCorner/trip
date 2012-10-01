@@ -4,7 +4,7 @@
  */
 
 jQuery(function ($) {
-  var imgsrc = 'static/images/';
+  var imgsrc = 'static/images/me/';
 
   $('.stats input').knob({
 //    readOnly: true,
