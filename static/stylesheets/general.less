@@ -10,3 +10,36 @@
 @blue: #079fda;
 @blue-light: #8bd3ee;
 @green: #9bca23;
+
+body { background: white; }
+
+#header { background: white; position: relative; border-bottom: 1px solid #eee; height: 44px;
+  .lines { position: absolute; top: 0; left: 0; height: 10px; width: 100%;
+    .blue { height: 5px; width: 50%; background-color: #079fda; position: absolute; left: 0; }
+    .green { height: 5px; width: 50%; background-color: #9bca23; position: absolute; right: 0;}
+  }
+  #logo { width: 50%; position: absolute; left: 20px; top: 8px; }
+  .buttons { position: absolute; right: 20px; top: 12px;
+    a { margin-left: 20px; }
+  }
+}
+
+#footer { height: 50px; width: 100%; position: absolute; bottom: 0; border-top: 1px solid #ccc; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 10px; background: -webkit-linear-gradient(#f8f8f8, #f4f4f4);
+  a { width: 20%; height: 100%; float: left; text-align: center; border-right: 1px solid #ccc; box-sizing: border-box;
+    .agenda-button { margin-top: 13px; }
+    .map-button { margin-top: 13px; }
+    .add-button { margin-top: 8px; }
+    .friend-button { margin-top: 13px; }
+    .me-button { margin-top: 8px; }
+  }
+}
+
+.at2x(@path, @w: auto, @h: auto) {
+  background-image: url("@{path}");
+  @at2x_path: ~`"@{path}".split('.').slice(0, "@{path}".split('.').length - 1).join(".") + "@2x" + "." + "@{path}".split('.')["@{path}".split('.').length - 1]`;
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+    background-image: url("@{at2x_path}");
+    background-size: @w @h;
+  }  
+}
