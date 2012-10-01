@@ -14,7 +14,9 @@
 
   <script src="static/scripts/less.min.js"></script>
   <script src="static/scripts/library.js"></script>
-  <script src="static/scripts/iphone.js"></script>
+  <script src="static/scripts/jquery.knob.js"></script>
+  <script src="static/scripts/me.js"></script>
+  <!--<script src="static/scripts/iphone.js"></script>-->
   <!--<script src="static/scripts/app.js"></script>-->
 </head>
 <body>
@@ -26,17 +28,31 @@
     </div>
     <div id="scroll">
       <section id="me" class="current">
-        <div class="chart">
-          <div id="chart_linear"></div>
+        <div class="profile">
+          <div class="avatar">
+            <div class="image">
+              <img src="static/images/avatar.png" alt="Jack Yulzari"/>
+            </div>
+          </div>
+          <div class="info">
+            <div class="details">
+              <h1 class="fullname">Jack Yulzari</h1>
+              <div class="position">Tel Aviv</div>
+              <div class="social">
+                <img src="static/images/facebook.png" alt="Facebook"/>
+                <img src="static/images/checked.png" alt="Checked"/>
+                <img src="static/images/twitter.png" alt="Twitter"/>
+                <img src="static/images/info.png" alt="Info"/>
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="rounded">
-          <li id="gallery" class="glyph visitors"><strong>830,345</strong> visitors</li>
-          <li class="glyph umbrella"><strong>7,345,783</strong> page views</li>
-          <li class="glyph maping"><strong>Berlin</strong> most popular city</li>
-          <li class="glyph bounce"><strong>45.6%</strong> bounce rate</li>
-          <li class="glyph plus" id="create">Tap here to create a <strong>notification</strong></li>
-          <li>Lorem ipsum</li>
-        </ul>
+
+        <div class="stats">
+          <div class="food">
+            <input type="text"/>
+          </div>
+        </div>
       </section>
     </div>
     <div id="bottom">

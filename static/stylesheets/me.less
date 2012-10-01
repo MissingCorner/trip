@@ -1,4 +1,20 @@
+@import 'general.less';
 
-#me {
-
+section#me { width: 320px;
+  .profile { height: 100px; background: @milk; width: 100%;
+    .avatar { width: 40%; float: left; margin-top: 12px;
+      .image { width: 77px; height: 77px; background: white; border-radius: 38px; border: 1px solid @gray4; margin: auto;
+        img { height: 75px; margin: 1px 0 0 1px;}
+      }
+    }
+    .info { width: 60%; float: right; margin-top: 20px;
+      .fullname { font-size: 30px;}
+      .position { color: @gray1; font-size: 20px;}
+      .details{ margin-left: 20px;
+        .social { margin-top: 10px;
+          img { width: 26px; margin-right: 5px;}
+        }
+      }
+    }
+  }
 }
