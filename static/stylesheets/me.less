@@ -1,20 +1,31 @@
 @import 'general.less';
 
 section#me { width: 320px;
-  .profile { height: 100px; background: @milk; width: 100%;
+  .profile { height: 100px; background: @milk; width: 100%; border-top: 1px solid @gray4; border-bottom: 1px solid @gray4;
     .avatar { width: 40%; float: left; margin-top: 12px;
       .image { width: 77px; height: 77px; background: white; border-radius: 38px; border: 1px solid @gray4; margin: auto;
         img { height: 75px; margin: 1px 0 0 1px;}
       }
     }
-    .info { width: 60%; float: right; margin-top: 20px;
-      .fullname { font-size: 30px;}
-      .position { color: @gray1; font-size: 20px;}
+    .info { width: 60%; float: right; margin-top: 15px;
+      .fullname { font-size: 20px;}
+      .position { color: @gray1; font-size: 15px;}
       .details{ margin-left: 20px;
-        .social { margin-top: 10px;
+        .social { margin-top: 8px;
           img { width: 26px; margin-right: 5px;}
         }
       }
+    }
+  }
+
+  .stats {
+    img { width: 14px; position: absolute;}
+    .value { position: absolute; color: @blue-light; font-size: 13px;}
+    .circle { border: 3.5px solid @blue-light; width: 40px; height: 40px; position: absolute; border-radius: 38px;}
+    .food { position: relative; width: 90px;
+      img { left: 27px; top: 34px;}
+      .circle { left: 17px; top: 17px;}
+      .value { left: 41px; top: 25px;}
     }
   }
 }
