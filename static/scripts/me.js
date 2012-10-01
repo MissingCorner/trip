@@ -4,18 +4,23 @@
  */
 
 jQuery(function ($) {
+  var imgsrc = 'static/images/';
+
   $('.stats input').knob({
 //    readOnly: true,
     width: 80,
     height: 80,
+    thickness: .2,
     bgColor: 'white',
     displayInput: false,
-    draw: function (e) {
+    draw: function () {
       if (this.$.val() != 100) {
-        this.$.parent().siblings('.value').html(this.$.val()).parent().removeClass('max');
+        var $img = this.$.parent().siblings('.value').html(this.$.val()).siblings('img');
+        $img.attr('src', imgsrc + $img.attr('alt') + '.png').parent().removeClass('max');
         this.o.fgColor = '#079fda';
       } else {
-        this.$.parent().siblings('.value').html('MAX').parent().addClass('max');
+        var $img = this.$.parent().siblings('.value').html('MAX').siblings('img');
+        $img.attr('src', imgsrc + $img.attr('alt') + '-max.png').parent().addClass('max');
         this.o.fgColor = '#9bca23';
       }
     }

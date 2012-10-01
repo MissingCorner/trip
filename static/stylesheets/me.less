@@ -18,19 +18,20 @@ section#me { width: 320px;
     }
   }
 
-  .stats {
-    img { width: 13px; position: absolute; left: 25px; top: 37px;}
-    .value { position: absolute; color: @blue-light; font-size: 12px; left: 39px; top: 27px;}
-    .circle { border: 3.5px solid @blue-light; width: 40px; height: 40px; position: absolute; border-radius: 38px; left: 17px; top: 17px;}
-    .single { position: relative; width: 90px; float: left; margin: 8px;
+  .stats { height: 190px; border-bottom: 1px solid @gray4;
+    .toggle { width: 3px; background: @blue; float: left; height: 100%;}
+    img { width: 15px; position: absolute; left: 23px; top: 36px;}
+    .value { position: absolute; color: @blue-light; font-size: 16px; top: 24px; left: 40px;}
+    .circle { border: 3.5px solid @blue-light; width: 50px; height: 50px; position: absolute; border-radius: 38px; left: 12px; top: 12px;}
+    .single { position: relative; width: 89px; float: left; margin: 15px 8px 0;
       &.max {
-        .value { color: @green; font-size: 11px; left: 36px; top: 28px;}
+        .value { color: @green; font-size: 13px; left: 35px;}
         .circle { border: 3.5px solid @green;}
       }
     }
-    .shopping { margin-left: 60px;}
-    .outing {
-      img { width: 20px; top: 42px;}
+    .shopping { margin-left: 60px; margin-top: 5px;}
+    .outing {  margin-top: 5px;
+      img { width: 28px; top: 46px; left: 21px;}
     }
   }
 }
