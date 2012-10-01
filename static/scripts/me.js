@@ -5,14 +5,19 @@
 
 jQuery(function ($) {
   $('.stats input').knob({
+//    readOnly: true,
     width: 80,
     height: 80,
-    fgColor: '#079fda',
     bgColor: 'white',
     displayInput: false,
     draw: function (e) {
-      this.$.parent().siblings('.value').html(this.$.val());
-//      console.log(this.$.parent().siblings('.value'));
+      if (this.$.val() != 100) {
+        this.$.parent().siblings('.value').html(this.$.val()).parent().removeClass('max');
+        this.o.fgColor = '#079fda';
+      } else {
+        this.$.parent().siblings('.value').html('MAX').parent().addClass('max');
+        this.o.fgColor = '#9bca23';
+      }
     }
   });
 })

@@ -19,13 +19,18 @@ section#me { width: 320px;
   }
 
   .stats {
-    img { width: 14px; position: absolute;}
-    .value { position: absolute; color: @blue-light; font-size: 13px;}
-    .circle { border: 3.5px solid @blue-light; width: 40px; height: 40px; position: absolute; border-radius: 38px;}
-    .food { position: relative; width: 90px;
-      img { left: 27px; top: 34px;}
-      .circle { left: 17px; top: 17px;}
-      .value { left: 41px; top: 25px;}
+    img { width: 13px; position: absolute; left: 25px; top: 37px;}
+    .value { position: absolute; color: @blue-light; font-size: 12px; left: 39px; top: 27px;}
+    .circle { border: 3.5px solid @blue-light; width: 40px; height: 40px; position: absolute; border-radius: 38px; left: 17px; top: 17px;}
+    .single { position: relative; width: 90px; float: left; margin: 8px;
+      &.max {
+        .value { color: @green; font-size: 11px; left: 36px; top: 28px;}
+        .circle { border: 3.5px solid @green;}
+      }
+    }
+    .shopping { margin-left: 60px;}
+    .outing {
+      img { width: 20px; top: 42px;}
     }
   }
 }
