@@ -1,0 +1,17 @@
+/* CSS Document */
+@import 'retina.less';
+@import 'general.less';
+
+
+#agenda { background: @white; width: 320px; height: 100%; margin: 0 auto;
+	.timeline-block-list {
+    & > li {
+      .time-header {
+        span { display: block; float: left;}
+        .th-left { width: 107px; text-align: right; padding-right: 10px; box-sizing: border-box; text-transform: uppercase; font-weight: 600; color: @gray1; font-size: 14px; line-height: 14px}
+        .timeline-break { .at2x('../images/agenda-big-bullet-selected.png'); width: 14px; height: 14px}
+        .timeline-break.selected { .at2x('../images/agenda-big-bullet-selected.png'); width: 14px; height: 14px}
+      }
+    }
+  }
+}
