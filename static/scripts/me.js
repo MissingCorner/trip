@@ -5,6 +5,30 @@
 
 jQuery(function ($) {
   var imgsrc = 'static/images/me/';
+  var monstered = false;
+  var pipe = parseInt($('.pipe-wrapper .value').text(), 10);
+  pipe = pipe <= 100 ? pipe : 100;
+
+  if (pipe < 1) {
+    pipe = 0;
+    $('.pipe-wrapper .pipe-water').hide();
+  } else {
+    $('.pipe-wrapper .pipe-water').show().css({height: pipe + 10});
+  }
+  $('.pipe-wrapper .pointer').css({bottom: pipe + 35});
+  $('.pipe-wrapper .value').css({bottom: pipe + 45});
+
+  $('.stats .toggle').click(function (e) {
+    if (!monstered) {
+      monsterOn();
+    } else {
+      monsterOff();
+    }
+  })
+
+  $('.stats .mask').on('click', function (e) {
+    monsterOff();
+  })
 
   $('.stats input').knob({
 //    readOnly: true,
@@ -25,4 +49,20 @@ jQuery(function ($) {
       }
     }
   });
+
+  function monsterOn() {
+    monstered = true;
+    $('.stats .mask').show();
+    $('.stats').animate({
+      left:$('.monster').width()
+    })
+  }
+
+  function monsterOff() {
+    monstered = false;
+    $('.stats .mask').hide();
+    $('.stats').animate({
+      left:0
+    })
+  }
 })
