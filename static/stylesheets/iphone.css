@@ -21,6 +21,14 @@ body {
 	right: 0px;
 }
 
+.clearfix:after {
+    clear: both;
+    content:".";
+    display: block;
+    height: 0;
+    visibility: hidden
+}
+
 /* Sections */
 section#app {
 	display: block;

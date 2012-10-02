@@ -11,7 +11,11 @@
 
 body { background: white; }
 
-#header { background: white; position: relative; border-bottom: 1px solid #eee; height: 44px;
+*:not(html) {
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+#header { background: white; position: relative; border-bottom: 1px solid @gray4; height: 44px; box-sizing:border-box;
   .lines { position: absolute; top: 0; left: 0; height: 10px; width: 100%;
     .blue { height: 5px; width: 50%; background-color: @blue; position: absolute; left: 0; }
     .green { height: 5px; width: 50%; background-color: @green; position: absolute; right: 0;}
@@ -34,11 +38,11 @@ body { background: white; }
 
 .at2x(@path, @w: auto, @h: auto) {
   background-image: url("@{path}");
-  @pp: ~`"@{path}".replace(/'/g, "")`;
-  @at2x_path: ~`"@{pp}".split('.').slice(0, "@{pp}".split('.').length - 1).join(".") + "@2x" + "." + "@{pp}".split('.')["@{pp}".split('.').length - 1]`;
+  @pp: ~`"@{path}".replace(/'/g, '')`;
+  @at2x_path: ~`"@{pp}".split('.').slice(0, "@{pp}".split('.').length - 1).join(".") + "@2x" + "." + "@{pp}".split('.')["@{pp}".split('.').length - 1]`;
 
   @media all and (-webkit-min-device-pixel-ratio : 1.5) {
     background-image: url("@{at2x_path}");
     background-size: @w @h;
-  }  
+  }
 }
