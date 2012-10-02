@@ -38,6 +38,7 @@
 			if(options.value >= 0 && options.value < options.max){
 				rotation = currentDeg = options.value;
 				knobTop.css('transform','rotate('+(currentDeg + options.offset)+'deg) translateZ(0)').css({ '-webkit-perspective' : 1000, '-webkit-backface-visibility' : 'hidden' });
+				// knobTop.css('transform','rotate('+(currentDeg + options.offset)+'deg)');
 				options.turn(currentDeg/359);
 			}
 			
@@ -104,6 +105,7 @@
 					lastDeg = tmp;
 		
 					knobTop.css('transform','rotate('+(currentDeg + options.offset)+'deg) translateZ(0)').css({ '-webkit-perspective' : 1000, '-webkit-backface-visibility' : 'hidden' });
+					// knobTop.css('transform','rotate('+(currentDeg + options.offset)+'deg)');
 					options.turn(currentDeg/360);
 				});
 			

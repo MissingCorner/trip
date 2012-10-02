@@ -21,9 +21,7 @@ $(function(){
 		
 		$('<div class="colorBar">').css({
 			backgroundColor: '#'+colors[i],
-			transform:'rotate('+deg+'deg) translateZ(0)',
-			'-webkit-perspective': 1000,
-			'-webkit-backface-visibility' : 'hidden',
+			transform:'rotate('+deg+'deg)',
 			top: -Math.sin(deg/rad2deg)*90+90,
 			left: Math.cos((180 - deg)/rad2deg)*90+90,
 		}).appendTo(bars);
@@ -35,8 +33,9 @@ $(function(){
 	$('#control').knobKnob({
 		snap : 0,
 		value: 120,
+		max: 210,
 		turn : function(ratio){
-			numBars = Math.round(colorBars.length*ratio);
+			numBars = Math.round(colorBars.length*ratio) + 1;
 			
 			// Update the dom only when the number of active bars
 			// changes, instead of on every move
@@ -65,5 +64,30 @@ $(function(){
 
 		$(this).removeClass('selected');
 	})
+
+	$('#open-location').on('click touchstart', function(e){
+		e.preventDefault();
+
+		$('#timeandplace .location').css('left', 0);
+	})
+
+	$('.location .button').on('click touchstart', function(e){
+		e.preventDefault();
+
+		$('#timeandplace .location').css('left', '-100%');
+	})
+
+	$('#open-time').on('click touchstart', function(e){
+		e.preventDefault();
+
+		$('#timeandplace .time').css('left', 0);
+	})
+
+	$('.time .button').on('click touchstart', function(e){
+		e.preventDefault();
+
+		$('#timeandplace .time').css('left', '100%');
+	})
+
 	
 });

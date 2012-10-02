@@ -35,7 +35,35 @@
     <div id="scroll">
       <section id="home" class="current">
         <div id='timeandplace'>
-          Trippin’<span class='blue'>in</span> <img src='/static/images/icon-checkin.png'/> <a href="#">NYC</a>, <img src='/static/images/time.png'/> <a href="#">NOW</a>
+          <div class='location'>
+            <div class='button'>
+              <img class='location-bg' src='/static/images/home-location-bg.png'>
+              <img class='location-target' src='/static/images/home-location-target.png'>
+              <span>current <br/>location</span>
+              <div class='dashed'></div>
+            </div>
+            <div class='input'>
+              <span>or enter city name</span>
+              <input type='text' value='Las Vegas'>
+              <div class='line'></div>
+            </div>
+          </div>
+          <div class='info'>
+            Trippin’<span class='blue'>in</span> <img src='/static/images/icon-checkin.png'/> <a href="#" id='open-location'>NYC</a>, <img src='/static/images/time.png'/> <a href="#" id='open-time'>NOW</a>
+          </div>
+          <div class='time'>
+            <div class='button'>
+              <img class='time-big' src='/static/images/home-time-big.png'>
+              <span>right <br/>now</span>
+              <div class='dashed'></div>
+            </div>
+            <div class='input'>
+              <span>or select custom time</span>
+              <input type='datetime'>
+              <div class='line'></div>
+              <img class='dropdown' src='/static/images/dropdown.png'>
+            </div>
+          </div>
         </div>
         <div id='toggles'>
           <a href="#" class='outing-toggle'><span></span></a>
