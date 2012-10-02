@@ -1,5 +1,79 @@
 /* Customize */
 
-#scroll { background: transparent; overflow-y: hidden;
+@import 'general.less';
 
+span.blue { color: @blue; }
+
+#scroll { background: transparent; overflow-y: hidden; font-family: 'Helvetica Neue';
+  #home { min-height: 0; overflow: hidden;
+    #timeandplace { width: 100%; height: 65px; border-left: 5px solid @blue; border-right: 5px solid @green; text-align: center; box-sizing: border-box; color: @gray1; font-size: 1.1em; line-height: 60px;
+      a { color: @blue; text-decoration: none; border-bottom: 1px solid @blue; text-transform: uppercase; }
+      img { top: 5px; position: relative; }
+    }
+    #toggles { width: 100%; height: 80px; background-color: @gray4; border-top: 1px solid @gray3; border-bottom: 1px solid @gray3; padding-bottom: 1px; box-sizing: border-box;
+      a { display: block; float: left; position: relative; width: 20%; height: 80px; box-sizing: border-box; border-left: 1px solid @gray3; border-right: 1px solid white; border-top: 1px solid white; 
+        span { position: absolute; width: 100%; height: 90%; }
+        &.outing-toggle span { background: url(../images/toggle-outing.png) no-repeat scroll bottom left; left: 10px; 
+          .at2x('../images/toggle-outing.png', 42px);
+        }
+        &.beer-toggle span { background: url(../images/toggle-beer.png) no-repeat scroll bottom left; left: 14px; 
+          .at2x('../images/toggle-beer.png', 37px);
+        }
+        &.food-toggle span { background: url(../images/toggle-food.png) no-repeat scroll bottom left; left: 17px; 
+          .at2x('../images/toggle-food.png', 28px); 
+        }
+        &.dj-toggle span { background: url(../images/toggle-dj.png) no-repeat scroll bottom left; left: 13px; 
+          .at2x('../images/toggle-dj.png', 38px); 
+        }
+        &.shop-toggle span { background: url(../images/toggle-shop.png) no-repeat scroll bottom left; left: 16px; 
+          .at2x('../images/toggle-shop.png', 29px); 
+        }
+
+        &.active { background: -webkit-linear-gradient(#f2f2f2, #e2e2e2); box-shadow: rgba(0, 0, 0, 0.3) 0 -2px 3px inset; border-top: 2px solid white; border-bottom: none; border-right: none;
+          &.outing-toggle span { background: url(../images/toggle-outing~selected.png) no-repeat scroll bottom left; left: 10px; 
+            .at2x('../images/toggle-outing~selected.png', 42px);
+          }
+          &.beer-toggle span { background: url(../images/toggle-beer~selected.png) no-repeat scroll bottom left; left: 14px; 
+            .at2x('../images/toggle-beer~selected.png', 37px);
+          }
+          &.food-toggle span { background: url(../images/toggle-food~selected.png) no-repeat scroll bottom left; left: 17px; 
+            .at2x('../images/toggle-food~selected.png', 28px); 
+          }
+          &.dj-toggle span { background: url(../images/toggle-dj~selected.png) no-repeat scroll bottom left; left: 13px; 
+            .at2x('../images/toggle-dj~selected.png', 38px); 
+          }
+          &.shop-toggle span { background: url(../images/toggle-shop~selected.png) no-repeat scroll bottom left; left: 16px; 
+            .at2x('../images/toggle-shop~selected.png', 29px); 
+          }
+        }
+      }
+    }
+    #cp { width: 100%; height: 220px; background: @gray4; box-sizing: border-box; padding: 20px 0 0 10px; position: relative;
+      #bars { height: 188px; margin: 0; position: relative; width: 204px; }
+      #control-bg { width: 140px; height: 140px; background:url(../images/knob-bg.png) no-repeat; position: absolute; top: 50%; left: 50%; margin: -70px 0 0 -70px; 
+        .at2x('../images/knob-bg.png', 140px);
+      }
+      #control { width: 108px; height: 108px; position: absolute; top: 50%; left: 50%; margin: -54px 0 0 -54px; }
+        .colorBar { width: 20px; height: 8px; position: absolute; opacity: 0; transition: 0.3s; 
+          &.active { opacity: 1; }
+      }
+      #chilling { color: #26e000; position: absolute; bottom: 10px; font-size: 1.1em; }
+      #tripping { color: red; position: absolute; left: 100%; font-size: 1.3em; font-weight: 700; top: 65px; text-transform: uppercase; }
+
+      .knob { width: 107px; height: 107px; position: relative; user-select: none;
+        .top { position:absolute; top:0; left:0; width:107px; height:107px; background:url(../images/knob.png) no-repeat; z-index:10; cursor:default !important;
+          .at2x('../images/knob.png', 107px);
+          &:after { content:''; width:8px; height:8px; background-color:#666; position:absolute; top:50%; left:10px; margin-top:-5px; border-radius: 50%; cursor:default !important; box-shadow: 0 0 1px #5a5a5a inset; }
+
+        }
+      }
+      #go { width: 90px; height: 100px; position: absolute; bottom: 5px; right: 10px; background: url(../images/go.png) no-repeat;
+        .at2x('../images/go.png', 86px);
+        &.selected { background: url(../images/go~selected.png) no-repeat;
+          .at2x('../images/go~selected.png', 86px);
+        }
+      }
+    }
+  }
+  
 }

@@ -1,5 +1,3 @@
-/* CSS Document */
-
 @gray1: #666;
 @gray2: #999;
 @gray3: #d2d2d2;
@@ -15,8 +13,8 @@ body { background: white; }
 
 #header { background: white; position: relative; border-bottom: 1px solid #eee; height: 44px;
   .lines { position: absolute; top: 0; left: 0; height: 10px; width: 100%;
-    .blue { height: 5px; width: 50%; background-color: #079fda; position: absolute; left: 0; }
-    .green { height: 5px; width: 50%; background-color: #9bca23; position: absolute; right: 0;}
+    .blue { height: 5px; width: 50%; background-color: @blue; position: absolute; left: 0; }
+    .green { height: 5px; width: 50%; background-color: @green; position: absolute; right: 0;}
   }
   #logo { width: 50%; position: absolute; left: 20px; top: 8px; }
   .buttons { position: absolute; right: 20px; top: 12px;
@@ -36,7 +34,8 @@ body { background: white; }
 
 .at2x(@path, @w: auto, @h: auto) {
   background-image: url("@{path}");
-  @at2x_path: ~`"@{path}".split('.').slice(0, "@{path}".split('.').length - 1).join(".") + "@2x" + "." + "@{path}".split('.')["@{path}".split('.').length - 1]`;
+  @pp: ~`"@{path}".replace(/'/g, "")`;
+  @at2x_path: ~`"@{pp}".split('.').slice(0, "@{pp}".split('.').length - 1).join(".") + "@2x" + "." + "@{pp}".split('.')["@{pp}".split('.').length - 1]`;
 
   @media all and (-webkit-min-device-pixel-ratio : 1.5) {
     background-image: url("@{at2x_path}");
