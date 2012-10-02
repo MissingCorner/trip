@@ -7,16 +7,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <title>Homepage</title>
   <link rel="stylesheet" href="static/stylesheets/iphone.css">
-  <link rel="stylesheet/less" href="static/stylesheets/general.less?v=3">
-  <link rel="stylesheet/less" href="static/stylesheets/home.less?v=3">
+  <link rel="stylesheet/less" href="static/stylesheets/general.less">
+  <link rel="stylesheet/less" href="static/stylesheets/home.less">
+  <link rel="stylesheet/less" href="static/stylesheets/bubbles.less">
   <link rel="apple-touch-icon-precomposed" href="/static/images/icon@2x.png" />
   <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="static/images/retina_splash.png" />
-  <script src="static/scripts/library.js"></script>
-  <script src="static/scripts/less.min.js"></script>
-  <script src="static/scripts/retina.js"></script>
-  <script src="static/scripts/transform.js"></script>
-  <script src="static/scripts/knobKnob.js?v=3"></script>
-  <script src="static/scripts/script.js?v=3"></script>
 </head>
 <body>
   <section id="app">
@@ -33,32 +28,6 @@
     </div>
     <div id="scroll">
       <section id="home" class="current">
-        <div id='timeandplace'>
-          Trippin’<span class='blue'>in</span> <img src='/static/images/icon-checkin.png'/> <a href="#">NYC</a>, <img src='/static/images/time.png'/> <a href="#">NOW</a>
-        </div>
-        <div id='toggles'>
-          <a href="#" class='outing-toggle'><span></span></a>
-          <a href="#" class='beer-toggle active'><span></span></a>
-          <a href="#" class='food-toggle'><span></span></a>
-          <a href="#" class='dj-toggle'><span></span></a>
-          <a href="#" class='shop-toggle'><span></span></a>
-        </div>
-        <div id='cp'>
-          <div id='bars'>
-            <div id='control-bg'>
-              <div id='control'></div>
-            </div>
-            <div id='chilling'>
-              chillin’
-            </div>
-            <div id='tripping'>
-              TRIPPIN’
-            </div>
-          </div>
-          <div id='go'>
-
-          </div>
-        </div>
       </section>
       <div id="magic-container">
         <div class="magic-widget" id="mw1">
@@ -136,6 +105,12 @@
       <section id="about">Another <strong>view</strong></section>
     </div>
   </section>
+
+  <script src="static/scripts/library.js"></script>
+  <script src="static/scripts/less.min.js"></script>
+  <script src="static/scripts/retina.js"></script>
+  <script src="static/scripts/script.js"></script>
+  <script src="static/scripts/jgestures.min.js"></script>
 
 </body>
 </html>
