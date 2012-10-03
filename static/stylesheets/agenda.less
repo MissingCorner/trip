@@ -15,7 +15,14 @@
       .timeline-block-item { width: 100%; .at2x('../images/agenda-bg.png', 100%, 1px); background-repeat: repeat-y; display: block; position: relative; margin-top: 10px;
       	& > li { margin-bottom: 10px;}
       	& > li > div { display: block; float: left;}
-        .tb-left { width: 99px; height: 80px; border-radius: 6px; background: tranparent; margin-left: 6px; overflow: hidden;}
+        .tb-left { width: 99px; height: 80px; border-radius: 6px; background: tranparent; margin-left: 6px; overflow: hidden; position: relative;
+          img { position: absolute; top: 0; left: 0; opacity: 0; -webkit-transition: all 0.4s ease;
+            &.active {
+              opacity: 1;
+              -webkit-transition: none;
+            }
+          }
+        }
         .tb-middle { width: 18px; height: 80px; position: relative;
         	.tl-bullet { top: 32px; left: 1px; position: absolute; display: block; width: 11px; height: 11px; border-radius: 11px; background: @blue-light; border: 2px solid @white;}
         }

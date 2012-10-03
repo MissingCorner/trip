@@ -10,11 +10,19 @@
 @green: #9bca23;
 
 @widget-radius: 30px;
-
-*:not(html) {
-  -webkit-transform: translateZ(0);
-  -webkit-perspective: 1000;
+@device-width: 320px;
+@translateX: @device-width / 2 - @widget-radius;
+.widgetTransform (@d, @h) {
+  @nd : @d * (-1);
+  -webkit-transform: ~`"translate(@{translateX}, 0px) rotateZ(@{d}) translateZ(0)"`;
   -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  &.cactive {
+    height: @h;
+  }
+  .magic-content-wrapper {
+    -webkit-transform: rotateZ(@nd) translateZ(0);
+  }
 }
 
 #bubbles {
@@ -22,17 +30,19 @@
 }
 
 #magic-container {
-  position: fixed;
-  bottom: -10px;
-  left: 40%;
-  width: 1px;
-  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   -webkit-perspective-origin-x: 0;
   -webkit-perspective-origin-y: 0;
   -webkit-perspective: 1000px;
+  overflow: hidden;
   .magic-widget {
-    -webkit-transform-origin: bottom center;
-    -webkit-transition: 0.4s;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transition: all 0.4s ease;
     z-index: 1000;
     bottom: 0;
     position: absolute;
@@ -42,22 +52,14 @@
       visibility: visible;
     }
     .magic-content-wrapper {
-      border-radius: @widget-radius;
+      border-radius: 50%;
       height: @widget-radius * 2;
       width: @widget-radius * 2;
       font-size: 12px;
       position: relative;
       border: 2px solid @gray4;
-      .magic-content-background {
-        border-radius: @widget-radius;
-        width: @widget-radius * 2;
-        height: @widget-radius * 2;
-        background: @gray1;
-        opacity: 0.2;
-        position: absolute;
-      }
       &.cactive .magic-content-border {
-        -webkit-transform: translate3d(-8px, -8px, 0);
+        -webkit-transform: translate(-8px, -8px) translateZ(0);
         border-radius: 36px;
         width: 72px;
         height: 72px;
@@ -65,11 +67,13 @@
         position: absolute;
       }
       .magic-content {
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
         width: @widget-radius * 2;
         height: @widget-radius * 2;
+        border-radius: @widget-radius * 2;
         position: absolute;
+        background: rgba(102, 102, 102, 0.2);
         color: @white;
         line-height: @widget-radius * 2;
       }
@@ -88,36 +92,24 @@
         border: 1px solid;
         border-color: @gray1;
         border-radius: 8px;
-        -webkit-transition-property: opacity, padding, visibility;
-        transition-property: opacity, padding, visibility;
-        -webkit-transition: 0.2s ease-out;
-        transition: 0.2s ease-out;
-        background-color: #d9e3fa;
+        -webkit-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        background-color: @gray3;
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @gray4), color-stop(100%, @gray3));
         background-image: -webkit-linear-gradient(top, @gray4, @gray3);
         background-image: linear-gradient(top, @gray4, @gray3);
         -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.1);
         box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.1);
-        &:before, &:after, li:first-child:after {
+        &:after {
           display: block;
           content: '';
           width: 0;
           height: 0;
           position: absolute;
-          left: @widget-radius * 1.5 - 7px;
-          border: 7px outset transparent;
-        }
-        &:before {
-          border-top: 7px solid #555;
-          bottom: -14px;
-        }
-        &:after {
-          border-top: 7px solid #d9e3fa;
-          bottom: -12px;
-        }
-        li:first-child:after {
-          border-top: 7px solid #fff;
-          bottom: -13px;
+          left: @widget-radius * 1.5 - 6px;
+          border: 6px outset transparent;
+          border-top: 10px solid @gray3;
+          bottom: -15px;
         }
         li {
           padding: 0 12px;
@@ -183,47 +175,21 @@
 }
 
 #mw1 {
-  -webkit-transform: rotateZ(-70deg) translateZ(0);
-  &.cactive {
-    height: 140px;
-  }
-  .magic-content-wrapper {
-    -webkit-transform: rotateZ(70deg) translateZ(0);
-  }
+  .widgetTransform(-60deg, 160px);
 }
 
 #mw2 {
-  -webkit-transform: rotateZ(-30deg) translateZ(0);
-  &.cactive {
-    height: 150px;
-  }
-  .magic-content-wrapper {
-    -webkit-transform: rotateZ(30deg) translateZ(0);
-  }
+  .widgetTransform(-30deg, 170px);
 }
 
 #mw3 {
-  &.cactive {
-    height: 170px;
-  }
+  .widgetTransform(0deg, 190px);
 }
 
 #mw4 {
-  -webkit-transform: rotateZ(30deg) translateZ(0);
-  &.cactive {
-    height: 150px;
-  }
-  .magic-content-wrapper {
-    -webkit-transform: rotateZ(-30deg) translateZ(0);
-  }
+  .widgetTransform(30deg, 170px);
 }
 
 #mw5 {
-  -webkit-transform: rotateZ(70deg) translateZ(0);
-  &.cactive {
-    height: 140px;
-  }
-  .magic-content-wrapper {
-    -webkit-transform: rotateZ(-70deg) translateZ(0);
-  }
+  .widgetTransform(60deg, 170px);
 }

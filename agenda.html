@@ -10,12 +10,6 @@
   <link rel="stylesheet" href="static/stylesheets/iphone.css">
   <link rel="apple-touch-icon-precomposed" href="static/images/icon@2x.png" />
   <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="static/images/retina_splash.png" />
-
-  <script src="static/scripts/library.js"></script>
-  <script src="static/scripts/less.min.js"></script>
-  <script src="static/scripts/retina.js"></script>
-  <script src="static/scripts/script.js"></script>
-  <script src="static/scripts/jquery.iosslider.min.js"></script>
 </head>
 <body>
   <section id="app">
@@ -41,7 +35,10 @@
             </div>
           	<ul class="timeline-block-item">
             	<li class="clearfix">
-                <div class="tb-left"><img src="static/images/hot.jpg" height="80"></div>
+                <div class="tb-left">
+                  <img src="static/images/hot.jpg" height="80" class="active">
+                  <img src="static/images/hot.jpg" height="80">
+                </div>
                 <div class="tb-middle">
                   <span class="tl-bullet"></span>
                 </div>
@@ -270,6 +267,14 @@
       <section id="about">Another <strong>view</strong></section>
     </div>
   </section>
+
+  <script src="static/scripts/library.js"></script>
+  <script src="static/scripts/less.min.js"></script>
+  <script src="static/scripts/knobKnob.js"></script>
+  <script src="static/scripts/retina.js"></script>
+  <script src="static/scripts/stats.min.js"></script>
+  <script src="static/scripts/jquery.iosslider.min.js"></script>
+  <script src="static/scripts/script.js"></script>
 </body>
 </html>
 <!-- Localized -->
