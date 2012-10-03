@@ -18,7 +18,7 @@ jQuery(function ($) {
   $('.pipe-wrapper .pointer').css({bottom: pipe + 35});
   $('.pipe-wrapper .value').css({bottom: pipe + 45});
 
-  $('.stats').on('swiperight', function () {
+  $('.stats').on('swipeRight', function () {
     if (!monstered) {
       monsterOn();
     }
@@ -32,7 +32,7 @@ jQuery(function ($) {
     }
   })
 
-  $('.stats .mask').on('click swipeleft', function (e) {
+  $('.stats .mask').on('click swipeLeft', function (e) {
     monsterOff();
   })
 
