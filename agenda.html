@@ -1,42 +1,280 @@
 <!DOCTYPE html>
-<html lang="en" manifest="cache.manifest">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="user-scalable=no, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, width=device-width" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <title>Dashboard</title>
+  <link rel="stylesheet/less" href="static/stylesheets/agenda.less">
   <link rel="stylesheet" href="static/stylesheets/iphone.css">
   <link rel="apple-touch-icon-precomposed" href="static/images/icon@2x.png" />
   <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="static/images/retina_splash.png" />
-
-  <script src="static/scripts/less.min.js"></script>
-  <script src="static/scripts/library.js"></script>
-  <script src="static/scripts/iphone.js"></script>
-  <!--<script src="static/scripts/app.js"></script>-->
 </head>
 <body>
   <section id="app">
-    <div id="toolbar">
-      <h2>Dashboard</h2>
-      <a id="update" class="button disabled">Update</a>
-      <a class="button right" href="#about">About</a>
+    <div id="header">
+      <div class='lines'>
+        <div class='blue'></div>
+        <div class='green'></div>
+      </div>
+      <div id="logo"><img src="/static/images/logo.png"/></div>
+      <div class='buttons'>
+        <a href="#" class='share'><img src='/static/images/icon-share.png'/></a>
+        <a href="#" class='checkin'><img src='/static/images/icon-checkin.png'/></a>
+      </div>
     </div>
     <div id="scroll">
       <section id="agenda" class="current">
+      	<ul class="timeline-block-list">
+        	<li>
+          	<div class="time-header clearfix">
+            	<span class="th-left">Evening</span>
+              <span class="th-middle timeline-break active"></span>
+              <span class="th-right"></span>
+            </div>
+          	<ul class="timeline-block-item">
+            	<li class="clearfix">
+                <div class="tb-left">
+                  <img src="static/images/hot.jpg" height="80" class="active">
+                  <img src="static/images/hot.jpg" height="80">
+                </div>
+                <div class="tb-middle">
+                  <span class="tl-bullet"></span>
+                </div>
+                <div class="tb-right">
+                  <div class="loc-list clearfix">
+                    <div class="slider">
+                      <div class="slide">
+                        <h3><span></span>Taboo Bar</h3>
+                        <span class="distance">1.2</span>
+                        <span class="checkin">3,046</span>
+                        <span class="tweets">984</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">escort</span>
+                          <span class="pink">bj</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <h3><span></span>ABC</h3>
+                        <span class="distance">5.0</span>
+                        <span class="checkin">4,046</span>
+                        <span class="tweets">1000</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">Blah</span>
+                          <span class="pink">blah</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="clearfix">
+              	<div class="tb-left"><img src="static/images/hot.jpg" height="80"></div>
+                <div class="tb-middle">
+                	<span class="tl-bullet"></span>
+                </div>
+                <div class="tb-right">
+                	<div class="loc-list clearfix">
+                    <div class="slider">
+                      <div class="slide">
+                        <h3><span></span>Taboo Bar</h3>
+                        <span class="distance">1.2</span>
+                        <span class="checkin">3,046</span>
+                        <span class="tweets">984</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">escort</span>
+                          <span class="pink">bj</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <h3><span></span>ABC</h3>
+                        <span class="distance">5.0</span>
+                        <span class="checkin">4,046</span>
+                        <span class="tweets">1000</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">Blah</span>
+                          <span class="pink">blah</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="clearfix">
+                <div class="tb-left"><img src="static/images/hot.jpg" height="80"></div>
+                <div class="tb-middle">
+                  <span class="tl-bullet"></span>
+                </div>
+                <div class="tb-right">
+                  <div class="loc-list clearfix">
+                    <div class="slider">
+                      <div class="slide">
+                        <h3><span></span>Taboo Bar</h3>
+                        <span class="distance">1.2</span>
+                        <span class="checkin">3,046</span>
+                        <span class="tweets">984</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">escort</span>
+                          <span class="pink">bj</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <h3><span></span>ABC</h3>
+                        <span class="distance">5.0</span>
+                        <span class="checkin">4,046</span>
+                        <span class="tweets">1000</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">Blah</span>
+                          <span class="pink">blah</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+          	<div class="time-header clearfix">
+            	<span class="th-left">Night</span>
+              <span class="th-middle timeline-break"></span>
+              <span class="th-right"></span>
+            </div>
+          	<ul class="timeline-block-item">
+            	<li class="clearfix">
+                <div class="tb-left"><img src="static/images/hot.jpg" height="80"></div>
+                <div class="tb-middle">
+                  <span class="tl-bullet"></span>
+                </div>
+                <div class="tb-right">
+                  <div class="loc-list clearfix">
+                    <div class="slider">
+                      <div class="slide">
+                        <h3><span></span>Taboo Bar</h3>
+                        <span class="distance">1.2</span>
+                        <span class="checkin">3,046</span>
+                        <span class="tweets">984</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">escort</span>
+                          <span class="pink">bj</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <h3><span></span>ABC</h3>
+                        <span class="distance">5.0</span>
+                        <span class="checkin">4,046</span>
+                        <span class="tweets">1000</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">Blah</span>
+                          <span class="pink">blah</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="clearfix">
+                <div class="tb-left"><img src="static/images/hot.jpg" height="80"></div>
+                <div class="tb-middle">
+                  <span class="tl-bullet"></span>
+                </div>
+                <div class="tb-right">
+                  <div class="loc-list clearfix">
+                    <div class="slider">
+                      <div class="slide">
+                        <h3><span></span>Taboo Bar</h3>
+                        <span class="distance">1.2</span>
+                        <span class="checkin">3,046</span>
+                        <span class="tweets">984</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">escort</span>
+                          <span class="pink">bj</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <h3><span></span>ABC</h3>
+                        <span class="distance">5.0</span>
+                        <span class="checkin">4,046</span>
+                        <span class="tweets">1000</span>
+                        <div class="sep"></div>
+                        <div class="tags">
+                          <span class="green">Blah</span>
+                          <span class="pink">blah</span>
+                        </div>
+                        <div class="rating high">
+                          9.1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
       </section>
 
     </div>
-    <div id="bottom">
-      <a href="#home" class="active">Dashboard</a>
-      <a href="#maps" data-scroll="translucent">Maps</a>
-      <a href="#chat">Chat</a>
-      <a href="#todo">To-do</a>
+    <div id="footer">
+      <a href="#agenda"><img class='agenda-button' src='/static/images/agenda.png'/></a>
+      <a href="#map"><img class='map-button' src='/static/images/map.png'/></a>
+      <a href="#add"><img class='add-button' src='/static/images/add.png'/></a>
+      <a href="#friend"><img class='friend-button' src='/static/images/friend.png'/></a>
+      <a href="#me"><img class='me-button' src='/static/images/me.png'/></a>
     </div>
     <div id="modals">
       <section id="about">Another <strong>view</strong></section>
     </div>
   </section>
+
+  <script src="static/scripts/library.js"></script>
+  <script src="static/scripts/less.min.js"></script>
+  <script src="static/scripts/knobKnob.js"></script>
+  <script src="static/scripts/retina.js"></script>
+  <script src="static/scripts/stats.min.js"></script>
+  <script src="static/scripts/jquery.iosslider.min.js"></script>
+  <script src="static/scripts/script.js"></script>
 </body>
 </html>
 <!-- Localized -->
