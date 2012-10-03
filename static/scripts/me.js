@@ -22,7 +22,7 @@ jQuery(function ($) {
     if (!monstered) {
       monsterOn();
     }
-  })
+  });
 
   $('.stats .toggle').click(function (e) {
     if (!monstered) {
@@ -30,17 +30,17 @@ jQuery(function ($) {
     } else {
       monsterOff();
     }
-  })
+  });
 
   $('.stats .mask').on('click swipeLeft', function (e) {
     monsterOff();
-  })
+  });
 
   $('.stats input').knob({
     readOnly: true,
     width: 80,
     height: 80,
-    thickness: .2,
+    thickness: 0.2,
     bgColor: 'white',
     displayInput: false,
     draw: function () {
@@ -61,7 +61,7 @@ jQuery(function ($) {
     $('.stats .mask').show();
     $('.stats').css({
       left:$('.monster').width()
-    })
+    });
     $('.pipe-wrapper, .monster-wrapper').addClass('flipped');
   }
 
@@ -70,7 +70,7 @@ jQuery(function ($) {
     $('.stats .mask').hide();
     $('.stats').css({
       left:0
-    })
+    });
     $('.pipe-wrapper, .monster-wrapper').removeClass('flipped');
   }
-})
+});

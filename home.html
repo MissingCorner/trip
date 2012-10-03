@@ -11,14 +11,29 @@
   <link rel="stylesheet/less" href="static/stylesheets/home.less?v=3">
   <link rel="apple-touch-icon-precomposed" href="/static/images/icon@2x.png" />
   <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="static/images/retina_splash.png" />
+  <script>
+  function destroyLessCache(pathToCss) {
+    var host = window.location.host;
+    var protocol = window.location.protocol;
+    var keyPrefix = protocol + '//' + host + pathToCss;
+
+    for (var key in window.localStorage) {
+      if (key.indexOf(keyPrefix) === 0) {
+        delete window.localStorage[key];
+      }
+    }
+  }
+  destroyLessCache('/');
+  </script>
+
   <script src="static/scripts/library.js"></script>
   <script src="static/scripts/less.min.js"></script>
-  <script src="static/scripts/retina.js"></script>
+  <script src="static/scripts/knobKnob.js"></script>
   <script src="static/scripts/transform.js"></script>
-  <script src="static/scripts/knobKnob.js?v=3"></script>
+  <script src="static/scripts/retina.js"></script>
+  <script src="static/scripts/stats.min.js"></script>
   <script src="static/scripts/jquery.iosslider.min.js"></script>
-  <script src="static/scripts/script.js?v=3"></script>
-  
+
 </head>
 <body>
   <section id="app">
@@ -90,70 +105,6 @@
           </div>
         </div>
       </section>
-      <div id="magic-container">
-        <div class="magic-widget" id="mw1">
-          <div class="magic-content-wrapper">
-            <div class="magic-content-background"></div>
-            <div class="magic-content">Trippin'</div>
-            <div class="magic-content-border"></div>
-          </div>
-          <div class="magic-line-wrapper">
-            <div class="magic-line">
-            </div>
-          </div>
-        </div>
-        <div class="magic-widget" id="mw2">
-          <div class="magic-content-wrapper">
-            <div class="magic-content-background"></div>
-            <div class="magic-content">Checkin'</div>
-            <div class="magic-content-border"></div>
-          </div>
-          <div class="magic-line-wrapper">
-            <div class="magic-line">
-            </div>
-          </div>
-        </div>
-        <div class="magic-widget" id="mw3">
-          <div class="magic-content-wrapper">
-            <div class="magic-content-background"></div>
-            <div class="magic-content">Cravin'</div>
-            <div class="magic-content-border"></div>
-            <ul>
-              <li><a href="#">Pizza</a></li>
-              <li><a href="#">Ice-cream</a></li>
-              <li><a href="#">Pasta</a></li>
-              <li><a href="#">Coffee</a></li>
-            </ul>
-          </div>
-          <div class="magic-line-wrapper">
-            <div class="magic-line">
-            </div>
-          </div>
-        </div>
-        <div class="magic-widget" id="mw4">
-          <div class="magic-content-wrapper">
-            <div class="magic-content-background"></div>
-            <div class="magic-content">Share</div>
-            <div class="magic-content-border"></div>
-          </div>
-          <div class="magic-line-wrapper">
-            <div class="magic-line">
-            </div>
-          </div>
-        </div>
-        <div class="magic-widget" id="mw5">
-          <div class="magic-content-wrapper">
-            <div class="magic-content-background"></div>
-            <div class="magic-content">Setting</div>
-            <div class="magic-content-border"></div>
-          </div>
-          <div class="magic-line-wrapper">
-            <div class="magic-line">
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
     <div id="footer">
       <a href="#agenda"><img class='agenda-button' src='/static/images/agenda.png'/></a>
@@ -165,8 +116,72 @@
     <div id="modals">
       <section id="about">Another <strong>view</strong></section>
     </div>
+    <div id="magic-container">
+      <div class="magic-widget" id="mw1">
+        <div class="magic-content-wrapper">
+          <div class="magic-content-background"></div>
+          <div class="magic-content">Trippin'</div>
+          <div class="magic-content-border"></div>
+        </div>
+        <div class="magic-line-wrapper">
+          <div class="magic-line">
+          </div>
+        </div>
+      </div>
+      <div class="magic-widget" id="mw2">
+        <div class="magic-content-wrapper">
+          <div class="magic-content-background"></div>
+          <div class="magic-content">Checkin'</div>
+          <div class="magic-content-border"></div>
+        </div>
+        <div class="magic-line-wrapper">
+          <div class="magic-line">
+          </div>
+        </div>
+      </div>
+      <div class="magic-widget" id="mw3">
+        <div class="magic-content-wrapper">
+          <div class="magic-content-background"></div>
+          <div class="magic-content">Cravin'</div>
+          <div class="magic-content-border"></div>
+          <ul>
+            <li><a href="#">Pizza</a></li>
+            <li><a href="#">Ice-cream</a></li>
+            <li><a href="#">Pasta</a></li>
+            <li><a href="#">Coffee</a></li>
+          </ul>
+        </div>
+        <div class="magic-line-wrapper">
+          <div class="magic-line">
+          </div>
+        </div>
+      </div>
+      <div class="magic-widget" id="mw4">
+        <div class="magic-content-wrapper">
+          <div class="magic-content-background"></div>
+          <div class="magic-content">Share</div>
+          <div class="magic-content-border"></div>
+        </div>
+        <div class="magic-line-wrapper">
+          <div class="magic-line">
+          </div>
+        </div>
+      </div>
+      <div class="magic-widget" id="mw5">
+        <div class="magic-content-wrapper">
+          <div class="magic-content-background"></div>
+          <div class="magic-content">Setting</div>
+          <div class="magic-content-border"></div>
+        </div>
+        <div class="magic-line-wrapper">
+          <div class="magic-line">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <script src="static/scripts/script.js"></script>
 </body>
 </html>
 <!-- Localized -->
