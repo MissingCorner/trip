@@ -242,8 +242,10 @@
       responsiveSlides : false,
       onSlideChange : function(options){
         var slideNumber = options.currentSlideNumber;
-        $('#agenda .tb-left > img').removeClass('active');
-        $('#agenda .tb-left > img:eq(' + slideNumber + ')').addClass('active');
+        var ele = options.currentSlideObject[0];
+        var $p = $(ele).closest('li.clearfix');
+        $p.find('.tb-left > img').removeClass('active');
+        $p.find('.tb-left > img:eq(' + slideNumber + ')').addClass('active');
       }
     });
   });
