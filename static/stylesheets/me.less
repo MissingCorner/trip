@@ -22,9 +22,7 @@ section#me { position: relative; overflow: hidden;
     .pipe-wrapper, .monster-wrapper { -webkit-transform-style: preserve-3d; -webkit-transition: all .5s;
       &.flipped { -webkit-transform: rotateY(0deg);}
     }
-    .pipe-wrapper { width: 45%; height: 100%; float: left; background: #ebecec; overflow: hidden;
-      -webkit-transform: rotateY(120deg);
-      -webkit-transform-origin: 0 0;
+    .pipe-wrapper { width: 45%; height: 100%; float: left; background: #ebecec; overflow: hidden; -webkit-transform: rotateY(120deg); -webkit-transform-origin: 0 0;
       .value { color: @green; position: absolute; left: 8px;}
       .pointer { position: absolute; left: 38px;}
       .pipe { position: absolute; top: 10px; left: 60px; height: 170px;
@@ -37,9 +35,7 @@ section#me { position: relative; overflow: hidden;
         }
       }
     }
-    .monster-wrapper { width: 55%; height: 100%; float: left; background: #ebecec; overflow: hidden; position: absolute; right: 100%;
-      -webkit-transform: rotateY(-70deg);
-      -webkit-transform-origin: 100% 100%;
+    .monster-wrapper { width: 55%; height: 100%; float: left; background: #ebecec; overflow: hidden; position: absolute; right: 100%; -webkit-transform: rotateY(-70deg); -webkit-transform-origin: 100% 100%;
       &.flipped { right: 0;}
       img { width: 99px; margin-top: 30px;}
     }
