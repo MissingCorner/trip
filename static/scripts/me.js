@@ -62,6 +62,7 @@ jQuery(function ($) {
     $('.stats').css({
       left:$('.monster').width()
     })
+    $('.pipe-wrapper, .monster-wrapper').addClass('flipped');
   }
 
   function monsterOff() {
@@ -70,5 +71,6 @@ jQuery(function ($) {
     $('.stats').css({
       left:0
     })
+    $('.pipe-wrapper, .monster-wrapper').removeClass('flipped');
   }
 })

@@ -18,8 +18,13 @@ section#me { position: relative; overflow: hidden;
     }
   }
 
-  .monster { background: #ebecec; width: 70%; height: 190px; position: absolute;
-    .pipe-wrapper { width: 45%; height: 100%; float: left;
+  .monster { background: white; width: 70%; height: 190px; position: absolute; -webkit-perspective: 500px;
+    .pipe-wrapper, .monster-wrapper { -webkit-transform-style: preserve-3d; -webkit-transition: all .5s;
+      &.flipped { -webkit-transform: rotateY(0deg);}
+    }
+    .pipe-wrapper { width: 45%; height: 100%; float: left; background: #ebecec; overflow: hidden;
+      -webkit-transform: rotateY(120deg);
+      -webkit-transform-origin: 0 0;
       .value { color: @green; position: absolute; left: 8px;}
       .pointer { position: absolute; left: 38px;}
       .pipe { position: absolute; top: 10px; left: 60px; height: 170px;
@@ -32,12 +37,15 @@ section#me { position: relative; overflow: hidden;
         }
       }
     }
-    .monster-wrapper { width: 50%; float: right;
+    .monster-wrapper { width: 55%; height: 100%; float: left; background: #ebecec; overflow: hidden; position: absolute; right: 100%;
+      -webkit-transform: rotateY(-70deg);
+      -webkit-transform-origin: 100% 100%;
+      &.flipped { right: 0;}
       img { width: 99px; margin-top: 30px;}
     }
   }
 
-  .stats { height: 190px; border-bottom: 1px solid @gray4; position: absolute; width: 100%; z-index: 20; background: white; -webkit-transition: all .4s;
+  .stats { height: 190px; border-bottom: 1px solid @gray4; position: absolute; width: 100%; z-index: 20; background: white; -webkit-transition: all .5s;
     .mask { width: 100%; height: 100%; background: transparent; position: absolute; z-index: 30; left: 5px; display: none;}
     .toggle { width: 5px; background: @blue; float: left; height: 100%; cursor: pointer;}
     img { width: 15px; position: absolute; left: 23px; top: 36px;}
