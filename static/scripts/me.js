@@ -18,6 +18,12 @@ jQuery(function ($) {
   $('.pipe-wrapper .pointer').css({bottom: pipe + 35});
   $('.pipe-wrapper .value').css({bottom: pipe + 45});
 
+  $('.stats').on('swiperight', function () {
+    if (!monstered) {
+      monsterOn();
+    }
+  })
+
   $('.stats .toggle').click(function (e) {
     if (!monstered) {
       monsterOn();
@@ -26,12 +32,12 @@ jQuery(function ($) {
     }
   })
 
-  $('.stats .mask').on('click', function (e) {
+  $('.stats .mask').on('click swipeleft', function (e) {
     monsterOff();
   })
 
   $('.stats input').knob({
-//    readOnly: true,
+    readOnly: true,
     width: 80,
     height: 80,
     thickness: .2,
@@ -53,7 +59,7 @@ jQuery(function ($) {
   function monsterOn() {
     monstered = true;
     $('.stats .mask').show();
-    $('.stats').animate({
+    $('.stats').css({
       left:$('.monster').width()
     })
   }
@@ -61,7 +67,7 @@ jQuery(function ($) {
   function monsterOff() {
     monstered = false;
     $('.stats .mask').hide();
-    $('.stats').animate({
+    $('.stats').css({
       left:0
     })
   }
