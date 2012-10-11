@@ -70,6 +70,14 @@ section#app section.current {
 	-webkit-transform: translate3d(0,0,0);
 	background: white;
 }
+#noscroll {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	overflow-y: hidden;
+}
 #scroll.translucent {
 	top: 0px;
 	bottom: 0px;

@@ -52,34 +52,34 @@
 
 (function($){
 
-  var requestAnimationFrame = (function(){
-    return  window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame    ||
-      window.oRequestAnimationFrame      ||
-      window.msRequestAnimationFrame     ||
-      function( callback ){
-        window.setTimeout(callback, 1000 / 60);
-      };
-  })();
+  // var requestAnimationFrame = (function(){
+  //   return  window.requestAnimationFrame ||
+  //     window.webkitRequestAnimationFrame ||
+  //     window.mozRequestAnimationFrame    ||
+  //     window.oRequestAnimationFrame      ||
+  //     window.msRequestAnimationFrame     ||
+  //     function( callback ){
+  //       window.setTimeout(callback, 1000 / 60);
+  //     };
+  // })();
 
-  (function(){
-    var stats = new Stats();
-    stats.setMode(0); // 0: fps, 1: ms
+  // (function(){
+  //   var stats = new Stats();
+  //   stats.setMode(0); // 0: fps, 1: ms
 
-    // Align top-left
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.left = '0px';
-    stats.domElement.style.top = '0px';
+  //   // Align top-left
+  //   stats.domElement.style.position = 'absolute';
+  //   stats.domElement.style.left = '0px';
+  //   stats.domElement.style.top = '0px';
 
-    document.body.appendChild( stats.domElement );
+  //   document.body.appendChild( stats.domElement );
 
-    requestAnimationFrame(function f() {
-      stats.end();
-      stats.begin();
-      requestAnimationFrame(f);
-    });
-  })();
+  //   requestAnimationFrame(function f() {
+  //     stats.end();
+  //     stats.begin();
+  //     requestAnimationFrame(f);
+  //   });
+  // })();
 
   $(document).ready(function(){
     var lastX;
@@ -136,10 +136,10 @@
     });
 
     var colors = [
-      '26e000','2fe300','37e700','45ea00','51ef00',
-      '61f800','6bfb00','77ff02','80ff05','8cff09',
-      '93ff0b','9eff09','a9ff07','c2ff03','d7ff07',
-      'f2ff0a','fff30a','ffdc09','ffce0a','ffc30a',
+      '8bd3ae','8bd3cb','8bd3df','8bd3ed','90d0ee',
+      '9bcbee','a7c6ee','babeee','d9adeb','e9a1df',
+      'f58ac5','f57eb5','f26593','e84a6c','de3045',
+      'da2838','da2838','da2838','ffce0a','ffc30a',
       'ffb509','ffa808','ff9908','ff8607','ff7005',
       'ff5f04','ff4f03','f83a00','ee2b00','e52000'
     ];
@@ -200,6 +200,23 @@
       $(this).removeClass('selected');
     });
 
+    $('#go').on('mousedown',function(e){
+      e.preventDefault();
+
+      $(this).addClass('selected');
+    }).on('mouseup',function(e){
+      e.preventDefault();
+
+      $(this).removeClass('selected');
+    });
+
+
+    $('#toggles a').click(function(e){
+      e.preventDefault();
+
+      $(this).toggleClass('active');
+    });
+
     $('#open-location').on('click touchstart', function(e){
       e.preventDefault();
 
@@ -228,6 +245,12 @@
 })(jQuery);
 
 (function($){
+  if (!('ontouchend' in window)) {
+      $(document).delegate('body', 'click', function(e) {
+          $(e.target).trigger('tap');
+      });
+  }
+
   $(document).ready(function(){
     $('#agenda .loc-list').on('swipeRight', 'li.active', function(){
       var $this = $(this);
@@ -242,11 +265,10 @@
       responsiveSlides : false,
       onSlideChange : function(options){
         var slideNumber = options.currentSlideNumber;
-        var ele = options.currentSlideObject[0];
-        var $p = $(ele).closest('li.clearfix');
-        $p.find('.tb-left > img').removeClass('active');
-        $p.find('.tb-left > img:eq(' + slideNumber + ')').addClass('active');
+        $('#agenda .tb-left > img').removeClass('active');
+        $('#agenda .tb-left > img:eq(' + slideNumber + ')').addClass('active');
       }
     });
   });
 })(jQuery);
+
