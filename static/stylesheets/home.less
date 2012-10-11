@@ -4,12 +4,12 @@
 
 span.blue { color: @blue; }
 
-*:not(html) { -webkit-transform: translate3d(0,0,0); }
+// *:not(html) { -webkit-transform: translate3d(0,0,0); }
 #scroll { background: transparent; overflow-y: hidden; font-family: 'Helvetica Neue';
   #home { min-height: 0; overflow: hidden;
     #timeandplace { width: 100%; text-align: center; box-sizing: border-box; color: @gray1; font-size: 1.1em; line-height: 60px; position: relative;
       .location { z-index: 999; background-color: @blue; height: 60px; overflow: hidden; -webkit-transition: all .3s; width: 100%; position: absolute; top: 0; left: -100%;
-        .button { width: 40%; height: 60px; box-sizing: border-box; float: left; position: relative; 
+        .button { width: 40%; height: 60px; box-sizing: border-box; float: left; position: relative;
           img.location-bg { position: absolute; top: -10px; left: 10px; }
           img.location-target { position: absolute; top: 15px; left: 80px; }
           span { color: white; position: absolute; left: 10px; top: 10px; line-height: 18px; font-size: 16px;}
@@ -26,7 +26,7 @@ span.blue { color: @blue; }
         img { top: 5px; position: relative; }
       }
       .time { z-index: 999; background-color: @green; height: 60px; overflow: hidden; -webkit-transition: all .3s; width: 100%; position: absolute; top: 0; left: 100%;
-        .button { width: 40%; height: 60px; box-sizing: border-box; float: left; position: relative; 
+        .button { width: 40%; height: 60px; box-sizing: border-box; float: left; position: relative;
           img.time-big { position: absolute; top: 15px; left: 70px; }
           span { color: white; position: absolute; left: 20px; top: 14px; line-height: 18px; font-size: 16px;}
           .dashed { border-right: 2px dashed white; position: absolute; right: 0; width: 4px; height: 40px; top: 12px; }
@@ -40,50 +40,50 @@ span.blue { color: @blue; }
       }
     }
     #toggles { width: 100%; height: 80px; background-color: @gray4; border-top: 1px solid @gray3; border-bottom: 1px solid @gray3; padding-bottom: 1px; box-sizing: border-box;
-      a { display: block; float: left; position: relative; width: 20%; height: 80px; box-sizing: border-box; border-left: 1px solid @gray3; border-right: 1px solid white; border-top: 1px solid white; 
+      a { display: block; float: left; position: relative; width: 20%; height: 80px; box-sizing: border-box; border-left: 1px solid @gray3; border-right: 1px solid white; border-top: 1px solid white;
         span { position: absolute; width: 100%; height: 90%; }
-        &.outing-toggle span { background: url(../images/toggle-outing.png) no-repeat scroll bottom left; left: 10px; 
+        &.outing-toggle span { background: url(../images/toggle-outing.png) no-repeat scroll bottom left; left: 10px;
           .at2x('../images/toggle-outing.png', 42px);
         }
-        &.beer-toggle span { background: url(../images/toggle-beer.png) no-repeat scroll bottom left; left: 14px; 
+        &.beer-toggle span { background: url(../images/toggle-beer.png) no-repeat scroll bottom left; left: 14px;
           .at2x('../images/toggle-beer.png', 37px);
         }
-        &.food-toggle span { background: url(../images/toggle-food.png) no-repeat scroll bottom left; left: 17px; 
-          .at2x('../images/toggle-food.png', 28px); 
+        &.food-toggle span { background: url(../images/toggle-food.png) no-repeat scroll bottom left; left: 17px;
+          .at2x('../images/toggle-food.png', 28px);
         }
-        &.dj-toggle span { background: url(../images/toggle-dj.png) no-repeat scroll bottom left; left: 13px; 
-          .at2x('../images/toggle-dj.png', 38px); 
+        &.dj-toggle span { background: url(../images/toggle-dj.png) no-repeat scroll bottom left; left: 13px;
+          .at2x('../images/toggle-dj.png', 38px);
         }
-        &.shop-toggle span { background: url(../images/toggle-shop.png) no-repeat scroll bottom left; left: 16px; 
-          .at2x('../images/toggle-shop.png', 29px); 
+        &.shop-toggle span { background: url(../images/toggle-shop.png) no-repeat scroll bottom left; left: 16px;
+          .at2x('../images/toggle-shop.png', 29px);
         }
 
         &.active { background: -webkit-linear-gradient(#f2f2f2, #e0e2e0); box-shadow: rgba(0, 0, 0, 0.1) 0 -1px 1px inset; border-top: 2px solid white; border-bottom:  solid 1px; border-right: none;
-          &.outing-toggle span { background: url(../images/toggle-outing~selected.png) no-repeat scroll bottom left; left: 10px; 
+          &.outing-toggle span { background: url(../images/toggle-outing~selected.png) no-repeat scroll bottom left; left: 10px;
             .at2x('../images/toggle-outing~selected.png', 42px);
           }
-          &.beer-toggle span { background: url(../images/toggle-beer~selected.png) no-repeat scroll bottom left; left: 14px; 
+          &.beer-toggle span { background: url(../images/toggle-beer~selected.png) no-repeat scroll bottom left; left: 14px;
             .at2x('../images/toggle-beer~selected.png', 37px);
           }
-          &.food-toggle span { background: url(../images/toggle-food~selected.png) no-repeat scroll bottom left; left: 17px; 
-            .at2x('../images/toggle-food~selected.png', 28px); 
+          &.food-toggle span { background: url(../images/toggle-food~selected.png) no-repeat scroll bottom left; left: 17px;
+            .at2x('../images/toggle-food~selected.png', 28px);
           }
-          &.dj-toggle span { background: url(../images/toggle-dj~selected.png) no-repeat scroll bottom left; left: 13px; 
-            .at2x('../images/toggle-dj~selected.png', 38px); 
+          &.dj-toggle span { background: url(../images/toggle-dj~selected.png) no-repeat scroll bottom left; left: 13px;
+            .at2x('../images/toggle-dj~selected.png', 38px);
           }
-          &.shop-toggle span { background: url(../images/toggle-shop~selected.png) no-repeat scroll bottom left; left: 16px; 
-            .at2x('../images/toggle-shop~selected.png', 29px); 
+          &.shop-toggle span { background: url(../images/toggle-shop~selected.png) no-repeat scroll bottom left; left: 16px;
+            .at2x('../images/toggle-shop~selected.png', 29px);
           }
         }
       }
     }
     #cp { width: 100%; height: 220px; background: @gray4; box-sizing: border-box; padding: 20px 0 0 10px; position: relative;
       #bars { height: 188px; margin: 0; position: relative; width: 204px; }
-      #control-bg { width: 140px; height: 140px; background:url(../images/home-knob-bg.png) no-repeat; position: absolute; top: 50%; left: 50%; margin: -70px 0 0 -70px; 
+      #control-bg { width: 140px; height: 140px; background:url(../images/home-knob-bg.png) no-repeat; position: absolute; top: 50%; left: 50%; margin: -70px 0 0 -70px;
         .at2x('../images/home-knob-bg.png', 140px);
       }
       #control { width: 100px; height: 100px; position: absolute; top: 50%; left: 50%; margin: -50px 0 0 -50px; }
-        .colorBar { width: 20px; height: 8px; position: absolute; opacity: 0; transition: 0.3s; 
+        .colorBar { width: 20px; height: 8px; position: absolute; opacity: 0; transition: 0.3s;
           &.active { opacity: 1; }
       }
       #chilling { color: #26e000; position: absolute; bottom: 10px; font-size: 1.1em; text-shadow: 0 1px white;}
@@ -104,5 +104,5 @@ span.blue { color: @blue; }
       }
     }
   }
-  
+
 }
