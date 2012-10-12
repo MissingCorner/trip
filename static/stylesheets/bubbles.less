@@ -4,7 +4,9 @@
 @translateX: @device-width / 2 - @widget-radius;
 .widgetTransform (@d, @h) {
   @nd : @d * (-1);
-  left : @translateX;
+  @w : @widget-radius * (-1);
+  left : 50%;
+  margin-left : @w;
   bottom : 25px;
   -webkit-transform: rotate(@d);
   // -webkit-backface-visibility: hidden;

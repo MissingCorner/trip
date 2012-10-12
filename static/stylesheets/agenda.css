@@ -149,7 +149,8 @@
   z-index: 1;
 }
 #mw1 {
-  left: 130px;
+  left: 50%;
+  margin-left: -30px;
   bottom: 25px;
   -webkit-transform: rotate(-55deg);
 }
@@ -160,7 +161,8 @@
   -webkit-transform: rotate(55deg);
 }
 #mw2 {
-  left: 130px;
+  left: 50%;
+  margin-left: -30px;
   bottom: 25px;
   -webkit-transform: rotate(-25deg);
 }
@@ -171,7 +173,8 @@
   -webkit-transform: rotate(25deg);
 }
 #mw3 {
-  left: 130px;
+  left: 50%;
+  margin-left: -30px;
   bottom: 25px;
   -webkit-transform: rotate(0deg);
 }
@@ -182,7 +185,8 @@
   -webkit-transform: rotate(0deg);
 }
 #mw4 {
-  left: 130px;
+  left: 50%;
+  margin-left: -30px;
   bottom: 25px;
   -webkit-transform: rotate(25deg);
 }
@@ -193,7 +197,8 @@
   -webkit-transform: rotate(-25deg);
 }
 #mw5 {
-  left: 130px;
+  left: 50%;
+  margin-left: -30px;
   bottom: 25px;
   -webkit-transform: rotate(55deg);
 }
@@ -260,13 +265,13 @@ body {
   z-index: 2;
 }
 #footer a {
-  width: 19%;
+  width: 20%;
   height: 100%;
   float: left;
   text-align: center;
   border-right: 1px solid #ccc;
   box-sizing: border-box;
-  -webkit-transform: translatez(2px);
+  -webkit-box-sizing: border-box;
 }
 #footer a .agenda-button {
   margin-top: 13px;
