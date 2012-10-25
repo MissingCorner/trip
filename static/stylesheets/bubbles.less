@@ -1,5 +1,5 @@
 
-@widget-radius: 30px;
+@widget-radius: 36px;
 @device-width: 320px;
 @translateX: @device-width / 2 - @widget-radius;
 .widgetTransform (@d, @h) {
@@ -55,8 +55,8 @@
       &.cactive .magic-content-border {
         -webkit-transform: translate(-8px, -8px);
         border-radius: 50%;
-        width: 72px;
-        height: 72px;
+        width: (@widget-radius * 2 + 12px);
+        height: (@widget-radius * 2 + 12px);
         border: 2px solid @green;
         position: absolute;
       }
@@ -171,21 +171,21 @@
 }
 
 #mw1 {
-  .widgetTransform(-55deg, 160px);
+  .widgetTransform(-52deg, 190px);
 }
 
 #mw2 {
-  .widgetTransform(-25deg, 170px);
+  .widgetTransform(-23deg, 210px);
 }
 
 #mw3 {
-  .widgetTransform(0deg, 190px);
+  .widgetTransform(0deg, 240px);
 }
 
 #mw4 {
-  .widgetTransform(25deg, 170px);
+  .widgetTransform(23deg, 210px);
 }
 
 #mw5 {
-  .widgetTransform(55deg, 170px);
+  .widgetTransform(52deg, 190px);
 }
