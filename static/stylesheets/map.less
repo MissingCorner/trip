@@ -41,3 +41,30 @@
     }
   }
 }
+
+#details { width: 320px; margin: 0 auto; box-sizing:border-box; padding-top: 10px;
+  .text { color: @gray2;}
+  .profile { height: 100px; width: 100%; border-bottom: 1px solid @gray4; margin-bottom: 5px;
+    .avatar { width: 30%; float: left; margin-top: 12px;
+      .image { width: 77px; height: 77px; background: white; border-radius: 38px; border: 1px solid @gray4; margin: auto;
+        img { height: 75px; margin: 1px 0 0 1px;}
+      }
+    }
+    .info { width: 70%; float: right; margin-top: 30px; font-size: 13px;
+      .action { color: @blue; font-weight: bold; border-bottom: 2px solid @blue;
+        .drink { width: 20px;}
+      }
+      .location { color: @green; font-weight: bold;}
+    }
+  }
+  .actions {
+    .back { width: 13%; float: left; border-right: 1px solid @gray4; text-align: center; padding-top: 2px;}
+    .act { width: 30%; float: left; border-right: 1px solid @gray4; text-align: center; padding-top: 2px;
+      img { margin-right: 6px;}
+    }
+    .sharing { width: 50%; float: right; background: @gray4; border-radius: 6px; padding: 3px 5px 3px 10px;
+      img { float: right; margin-left: 5px;}
+      .text { font-size: 13px;}
+    }
+  }
+}
