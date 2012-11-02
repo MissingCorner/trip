@@ -1,9 +1,14 @@
 /* CSS Document */
 @import 'general.less';
 
-#map { background: @white; width: 320px; height: 100%; margin: 0 auto; box-sizing:border-box; padding-top: 10px;
-  .map-block { height: 140px; width: 100%; background: gray;}
-  .search-block { height: 55px; width: 100%; background: #ccc;}
+#map { background: @white; width: 320px; margin: 0 auto; box-sizing:border-box; padding-top: 10px; overflow: scroll;
+  &::-webkit-scrollbar { display: none; }
+  #map_canvas { height: 140px; width: 100%; background: gray;}
+  .search-block { height: 55px; width: 100%; position: relative;
+    .search { width: 275px; height: 30px; border-radius: 3px; margin: 12px 0 0 5px; border: 1px solid @gray2; padding-left: 10px;}
+    .polygon { position: absolute; top: 22px; left: 10px;}
+    .submit { position: absolute; top: 15px; right: 7px;}
+  }
   .items { width: 100%;
     .item { border-top: 1px solid @gray4; height: 67px; clear: both;
       .picture { width: 100px; height: 68px; border-radius: 6px; float: left; position: relative; overflow: hidden;
@@ -21,7 +26,7 @@
           .checkin { width: 100px; float: left; margin-left: 5px;}
         }
         .score { position: relative; width: 35px; height: 30px; box-shadow: 0 2px 3px rgba(0,0,0,.1); border-radius: 4px; text-align: center; float: right; padding-top: 5px;
-          .value { font-size: 16px;
+          .value { font-size: 16px; line-height: 18px;
             &.great { color: @green}
           }
           .text { font-size: 8px; color: @gray3;}

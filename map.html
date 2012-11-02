@@ -8,12 +8,6 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="static/stylesheets/iphone.css">
   <link rel="stylesheet/less" href="static/stylesheets/map.less">
-
-  <script src="static/scripts/less.min.js"></script>
-  <script src="static/scripts/library.js"></script>
-  <script src="static/scripts/jquery.iosslider.min.js"></script>
-  <script src="static/scripts/script.js"></script>
-  <script src="static/scripts/map.js"></script>
   <link rel="apple-touch-icon-precomposed" href="static/images/icon@2x.png" />
   <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="static/images/retina_splash.png" />
 </head>
@@ -32,8 +26,12 @@
     </div>
     <div id="scroll">
       <section id="map" class="current">
-        <div class="map-block"></div>
-        <div class="search-block"></div>
+        <div id="map_canvas"></div>
+        <div class="search-block">
+          <input class="search" type="search" placeholder="Search"/>
+          <img class="polygon" src="static/images/polygon.png"/>
+          <img class="submit" src="static/images/search.png"/>
+        </div>
         <div class="items">
           <ul>
             <li class="item">
@@ -243,6 +241,7 @@
     </div>
   </section>
 
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
   <script src="static/scripts/library.js"></script>
   <script src="static/scripts/less.min.js"></script>
   <script src="static/scripts/knobKnob.js"></script>
@@ -250,6 +249,7 @@
   <script src="static/scripts/stats.min.js"></script>
   <script src="static/scripts/jquery.iosslider.min.js"></script>
   <script src="static/scripts/script.js"></script>
+  <script src="static/scripts/map.js"></script>
 </body>
 </html>
 <!-- Localized -->
