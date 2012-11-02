@@ -1,0 +1,38 @@
+/* CSS Document */
+@import 'general.less';
+
+#map { background: @white; width: 320px; height: 100%; margin: 0 auto; box-sizing:border-box; padding-top: 10px;
+  .map-block { height: 140px; width: 100%; background: gray;}
+  .search-block { height: 55px; width: 100%; background: #ccc;}
+  .items { width: 100%;
+    .item { border-top: 1px solid @gray4; height: 67px; clear: both;
+      .picture { width: 100px; height: 68px; border-radius: 6px; float: left; position: relative; overflow: hidden;
+        .avatar { border-radius: 6px; position: absolute; top: 3px; left: 5px;}
+        .glass { position: absolute; top: 3px; left: 74px; z-index: 2;}
+      }
+      .info { width: 210px; height: 100%; float: left; font-size: 11px; font-weight: 300; color: @gray1; position: relative; margin-left: 10px;
+        .title { width: 170px; float: left; margin-top: 5px;
+          .type { float: left; margin-right: 3px;}
+          h3 { font-size: 15px; line-height: 15px; float: left; color: black;}
+        }
+        .measure { width: 170px; float: left; margin-top: 5px;
+          .value { font-weight: bold; color: black;}
+          .distance { width: 50px; float: left;}
+          .checkin { width: 100px; float: left; margin-left: 5px;}
+        }
+        .score { position: relative; width: 35px; height: 30px; box-shadow: 0 2px 3px rgba(0,0,0,.1); border-radius: 4px; text-align: center; float: right; padding-top: 5px;
+          .value { font-size: 16px;
+            &.great { color: @green}
+          }
+          .text { font-size: 8px; color: @gray3;}
+        }
+        .tags { width: 100%; position: absolute; bottom: 3px;
+          .tag { float: right; color: white; margin-left: 5px; border-radius: 7px; padding: 0 8px;}
+          .restaurant { background: @blue;}
+          .bar { background: @pink;}
+          .pub { background: @green;}
+        }
+      }
+    }
+  }
+}
