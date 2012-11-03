@@ -1,0 +1,70 @@
+/* CSS Document */
+@import 'general.less';
+
+#map { background: @white; width: 320px; margin: 0 auto; box-sizing:border-box; overflow: scroll;
+  &::-webkit-scrollbar { display: none; }
+  #map_canvas { height: 140px; width: 100%; background: gray;}
+  .search-block { height: 55px; width: 100%; position: relative;
+    .search { width: 275px; height: 30px; border-radius: 3px; margin: 12px 0 0 5px; border: 1px solid @gray2; padding-left: 10px;}
+    .polygon { position: absolute; top: 22px; left: 10px;}
+    .submit { position: absolute; top: 15px; right: 7px;}
+  }
+  .items { width: 100%;
+    .item { border-top: 1px solid @gray4; height: 67px; clear: both;
+      .picture { width: 100px; height: 68px; border-radius: 6px; float: left; position: relative; overflow: hidden;
+        .avatar { border-radius: 6px; position: absolute; top: 3px; left: 5px;}
+        .glass { position: absolute; top: 3px; left: 74px; z-index: 2;}
+      }
+      .info { width: 210px; height: 100%; float: left; font-size: 11px; font-weight: 300; color: @gray1; position: relative; margin-left: 10px;
+        .title { width: 170px; float: left; margin-top: 5px;
+          .type { float: left; margin-right: 3px;}
+          h3 { font-size: 15px; line-height: 15px; float: left; color: black;}
+        }
+        .measure { width: 170px; float: left; margin-top: 5px;
+          .value { font-weight: bold; color: black;}
+          .distance { width: 50px; float: left;}
+          .checkin { width: 100px; float: left; margin-left: 5px;}
+        }
+        .score { position: relative; width: 35px; height: 30px; box-shadow: 0 2px 3px rgba(0,0,0,.1); border-radius: 4px; text-align: center; float: right; padding-top: 5px;
+          .value { font-size: 16px; line-height: 18px;
+            &.great { color: @green}
+          }
+          .text { font-size: 8px; color: @gray3;}
+        }
+        .tags { width: 100%; position: absolute; bottom: 3px;
+          .tag { float: right; color: white; margin-left: 5px; border-radius: 7px; padding: 0 8px;}
+          .restaurant { background: @blue;}
+          .bar { background: @pink;}
+          .pub { background: @green;}
+        }
+      }
+    }
+  }
+}
+
+#details { width: 320px; margin: 0 auto; box-sizing:border-box; padding-top: 10px;
+  .text { color: @gray2;}
+  .profile { height: 100px; width: 100%; border-bottom: 1px solid @gray4; margin-bottom: 5px;
+    .avatar { width: 30%; float: left; margin-top: 12px;
+      .image { width: 77px; height: 77px; background: white; border-radius: 38px; border: 1px solid @gray4; margin: auto;
+        img { height: 75px; margin: 1px 0 0 1px;}
+      }
+    }
+    .info { width: 70%; float: right; margin-top: 30px; font-size: 13px;
+      .action { color: @blue; font-weight: bold; border-bottom: 2px solid @blue;
+        .drink { width: 20px;}
+      }
+      .location { color: @green; font-weight: bold;}
+    }
+  }
+  .actions {
+    .back { width: 13%; float: left; border-right: 1px solid @gray4; text-align: center; padding-top: 2px;}
+    .act { width: 30%; float: left; border-right: 1px solid @gray4; text-align: center; padding-top: 2px;
+      img { margin-right: 6px;}
+    }
+    .sharing { width: 50%; float: right; background: @gray4; border-radius: 6px; padding: 3px 5px 3px 10px;
+      img { float: right; margin-left: 5px;}
+      .text { font-size: 13px;}
+    }
+  }
+}
