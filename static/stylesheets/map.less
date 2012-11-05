@@ -1,7 +1,8 @@
 /* CSS Document */
 @import 'general.less';
 
-#map { background: @white; width: 320px; margin: 0 auto; box-sizing:border-box; overflow: scroll;
+#map { background: @white; width: 320px; margin: 0 auto; overflow: scroll; box-sizing:border-box; opacity: 0; height: 0; min-height: 0 !important;
+  &.active { opacity: 1; -webkit-transition: opacity 1s; -webkit-transform: translate3d(0,0,0); height: auto;}
   &::-webkit-scrollbar { display: none; }
   #map_canvas { height: 140px; width: 100%; background: gray;}
   .search-block { height: 55px; width: 100%; position: relative;
@@ -42,7 +43,8 @@
   }
 }
 
-#details { width: 320px; margin: 0 auto; box-sizing:border-box; padding-top: 10px;
+#details { width: 320px; margin: 0 auto; box-sizing:border-box; padding-top: 10px; opacity: 0; height: 0; min-height: 0 !important; overflow: hidden;
+  &.active { opacity: 1; -webkit-transition: opacity 1s; -webkit-transform: translate3d(0,0,0); height: auto;}
   .text { color: @gray2;}
   .profile { height: 100px; width: 100%; border-bottom: 1px solid @gray4; margin-bottom: 5px;
     .avatar { width: 30%; float: left; margin-top: 12px;

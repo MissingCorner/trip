@@ -7,15 +7,13 @@ jQuery(function ($) {
   $('#scroll').css('height', ($(window).height() - $(header).height() - $(footer).height()) + 'px');
 
   $('.items').on('click', '.item', function (e) {
-    $('#map').fadeOut('fast', function () {
-      $('#details').fadeIn('fast');
-    })
+    $('#map').removeClass('active');
+    $('#details').addClass('active');
   })
 
   $('#details').on('click', '.back', function (e) {
-    $('#details').fadeOut('fast', function () {
-      $('#map').fadeIn('fast');
-    })
+    $('#map').addClass('active');
+    $('#details').removeClass('active');
   })
 
   var map;
